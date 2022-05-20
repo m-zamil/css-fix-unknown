@@ -1720,12 +1720,21 @@
           <section class="user-scam-detected call-location">
             <h2>Caller Location</h2>
             <div class="cellPhone-location">
-              <div class="pulsating-circle"></div>
-              <img class="pointer" src="https://static.callblocker.org/images/maps/pointer_up.png" alt="map-pointer" width="28" height="39" loading="lazy" decoding="async" />
-              <picture>
-                <source srcset="https://static.callblocker.org/images/maps/930x220/uk/020.png" media="(min-width: 768px)" />
-                <img class="cellPhone__location--img" src="https://static.callblocker.org/images/maps/336x280/uk/020.png" alt="London map" width="930" height="220" loading="lazy" decoding="async" />
-              </picture>
+              <div class="cellPhone-location-map">
+                <div class="pulsating-circle">
+                  <img class="pointer" src="https://static.callblocker.org/images/maps/pointer_up.png" alt="map-pointer" width="28" height="39" loading="lazy" decoding="async" />
+                </div>
+                <!-- <img class="pointer" src="https://static.callblocker.org/images/maps/pointer_up.png" alt="map-pointer" width="28" height="39" loading="lazy" decoding="async" /> -->
+                <picture>
+                  <source srcset="https://static.callblocker.org/images/maps/440x220/uk/020.webp" media="(max-width: 441px)" />
+                  <source srcset="https://static.callblocker.org/images/maps/440x220/uk/020.png" media="(max-width: 441px)" />
+                  <source srcset="https://static.callblocker.org/images/maps/768x220/uk/020.webp" media="(max-width: 768px)" />
+                  <source srcset="https://static.callblocker.org/images/maps/768x220/uk/020.png" media="(max-width: 768px)" />
+                  <source srcset="https://static.callblocker.org/images/maps/930x220/uk/020.webp" media="(min-width: 769px)" />
+                  <source srcset="https://static.callblocker.org/images/maps/930x220/uk/020.png" media="(min-width: 769px)" />
+                  <img class="cellPhone__location--img" src="https://static.callblocker.org/images/maps/930x220/uk/020.png" alt="London map" width="930" height="220" loading="lazy" decoding="async" />
+                </picture>
+              </div>
               <p>📍 <strong>Phone numbers starting with 020 belong to the London area</strong>. So far we have registered <strong>79,496 active spam phone numbers</strong> and we have detected <strong>5,480,349 spam calls</strong> coming from this location (<a href="https://www.unknownphone.com/areacodes/uk/020">area code 020</a>)</p>
             </div>
           </section>
@@ -1749,8 +1758,12 @@
               overflow: hidden;
               position: relative;
             }
+            .cellPhone-location-map {
+              padding: 0 !important;
+              position: relative;
+            }
             .pulsating-circle {
-              top: 85px;
+              top: 74px;
               left: 50%;
               transform: translateX(-50%);
               position: absolute;
@@ -1759,13 +1772,13 @@
               background: transparent !important;
             }
             .pointer {
-              position: relative;
-              top: 85px;
+              position: absolute;
+              top: 11px;
               left: 50%;
               transform: translateX(-50%);
             }
             .cellPhone__location--img {
-              margin: -40px 0 10px;
+              margin: 3px 0 10px;
               width: 100%;
               overflow: hidden;
               object-fit: cover;
@@ -1789,13 +1802,9 @@
             .pulsating-circle:after {
               content: "";
               position: absolute;
-              left: 0;
-              top: 0;
               display: block;
-              width: 100%;
-              height: 100%;
               opacity: 0.5;
-              background-color: lightgoldenrodyellow;
+              background-color: transparent;
               border-radius: 15px;
               box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
               -webkit-animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
